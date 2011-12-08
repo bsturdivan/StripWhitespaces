@@ -1,0 +1,15 @@
+I was prompted to create this function after I tried to use element.firstChild.nodeValue and it kept returning whitespace due to the indention in my markup. This simple function takes an element, removes all the whitespace and line breaks between its child tags and returns the original element and newly trimmed children as a DOM object. 
+
+Example:
+<div id="test">
+
+	<!--<h1>Comment</h1>-->
+	
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+	
+</div>
+
+<script>
+var tmpl = stripWhitespaces(document.getElementById('container'));
+console.log(tmpl.firstChild.nodeValue); //<h1>Comment</h1>
+</script>
